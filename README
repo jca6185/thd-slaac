@@ -2,3 +2,5 @@ este es el script que pueda utilizar una vez instale los requerimientos, explica
 
 https://blog.thehackingday.com/2014/05/script-thd-slaacsh-para-ataques-slaac.html
 https://blog.thehackingday.com/2014/06/script-thd-slaacsh-para-ataques-traves.html
+
+Septiembre 10 de 2021, se hace una mejora al script para invocar el servicio Bind a traves de Named
