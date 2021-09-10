@@ -71,7 +71,8 @@ echo "Ok"
 #Deteniendo Servicios
 echo
 echo "Deteniendo Servicios...."
-    service bind9 stop
+#    service bind9 stop
+    service named stop
     service wide-dhcpv6-server stop
 echo "Ok"
 
@@ -96,7 +97,7 @@ echo "options {
 #       que por los general es la misma puerta de enlace en los casos de los Internet Caseros
 #       ejm:
 #       186.65.16.2;
-8.8.8.8;
+10.10.19.1;
         };
         dnssec-validation auto;
         auth-nxdomain no;
@@ -175,7 +176,8 @@ echo "Iniciando Servicios....."
 service radvd stop
 sleep 3
 service radvd start
-service bind9 start
+#service bind9 start
+service named start
 service wide-dhcpv6-server start
 /sbin/iptables -I FORWARD -j ACCEPT -i $TVIRTUAL -o $NIC
 /sbin/iptables -I FORWARD -j ACCEPT -i $NIC -o $TVIRTUAL -m state --state RELATED,ESTABLISHED
@@ -239,7 +241,8 @@ echo "Ok"
 #Deteniendo Servicios
 echo
 echo "Deteniendo Servicios...."
-service bind9 stop
+#service bind9 stop
+service named stop
 service wide-dhcpv6-server stop
 kill ${dritnetid}
 service radvd stop
